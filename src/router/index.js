@@ -7,18 +7,24 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '*',
+    // redirect: '/informationReport'
     component: Home
   },
   {
     path: '/',
     name: 'home',
     component: Home
+  },
+  {
+    path: '/aboutus',
+    name: 'aboutus',
+    component: () => import('../views/AboutUs.vue')
+  },
+  {
+    path: '/informationReport',
+    name: 'informationReport',
+    component: () => import('../views/InformationReport.vue')
   }
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   component: () => import('../views/About.vue')
-  // }
 ]
 
 const router = new VueRouter({

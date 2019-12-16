@@ -31,10 +31,12 @@ html,body {
   min-width: 1200px;
   display: flex;
   flex-flow: column nowrap;
+  overflow: hidden;
 }
 .main-container{
   flex: 1;
   margin-bottom: 20px;
   background: #F7F7F7;
+  overflow: auto;
 }
 </style>

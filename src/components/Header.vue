@@ -42,6 +42,7 @@ export default {
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
+      margin-left: 20px;
       .logo-img{
         width: 50px;
         height: 50px;
@@ -75,7 +76,6 @@ export default {
         padding-top: 7px;
         padding-bottom: 8px;
         padding-right: 10px;
-        
         input{
           height: 100%;
           width: 100%;
@@ -94,10 +94,14 @@ export default {
         border-radius:24px;
         cursor: pointer;
         margin-right: -2px;
-        
         img{
           padding-top: 10px;
         }
+      }
+      .search-btn:active{
+        padding-top: 2px;
+        padding-left: 2px;
+        background: #3a8ee6;
       }
     }
     .hone-navbar{

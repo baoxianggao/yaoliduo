@@ -8,18 +8,18 @@
       <div class="footer-right">
         <div class="footer-guide">
           <div class="guide-home">
-            <span>网站导航</span>
-            <span>首页</span>
-            <span>药品信息</span>
-            <span>信息报告</span>
-            <span>关于我们</span>
+            <span class="guide-text">网站导航</span>
+            <span class="guide-item">首页</span>
+            <span class="guide-item">药品信息</span>
+            <span class="guide-item">信息报告</span>
+            <span class="guide-item">关于我们</span>
           </div>
-          <div>
-              <span>药品导航</span>
-              <span>全部药品</span>
-              <span>专科用药</span>
-              <span>常备用药</span>
-              <span>其他用药</span>
+          <div class="guide-home">
+              <span class="guide-text">药品导航</span>
+              <span class="guide-item">全部药品</span>
+              <span class="guide-item">专科用药</span>
+              <span class="guide-item">常备用药</span>
+              <span class="guide-item">其他用药</span>
           </div>
         </div>
         <div class="footer-company">Copyright&copy; 2019 suiren.com.All rights reserved. 沪 ICP备 11000614 号</div>
@@ -34,8 +34,6 @@
     background:rgba(81,84,96,1);
     box-sizing: border-box;
     color: #fff;
-    position: absolute;
-    bottom: 0;
     min-width: 1200px;
     font-size:16px;
     .a{}
@@ -51,6 +49,7 @@
         text-align: center;
         height: 100%;
         margin-top: 40px;
+        margin-left: 20px;
         .a{}
         .footer-img{
           height: 82px;
@@ -78,9 +77,22 @@
           flex-flow: row nowrap;
           justify-content: space-between;
           margin-top: 72px;
+          margin-right: 20px;
           margin-bottom: 85px;
+          font-family:PingFang-SC-Medium,PingFang-SC;
           .a{}
           .guide-home{
+            .a{}
+            .guide-text{
+              font-size:16px;
+              font-weight:600;
+            }
+            .guide-item{
+              font-size:13px;
+              font-weight:500;
+              margin-left: 16px;
+              cursor: pointer;
+            }
           }
         }
         .footer-company{
