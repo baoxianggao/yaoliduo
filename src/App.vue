@@ -37,9 +37,4 @@ body {
   background: #F7F7F7;
   overflow: hidden;
 }
-.main-container {
-  flex: 1;
-  margin-bottom: 10px;
-  background: #F7F7F7;
-}
 </style>
