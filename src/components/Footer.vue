@@ -9,10 +9,10 @@
         <div class="footer-guide">
           <div class="guide-home">
             <span class="guide-text">网站导航</span>
-            <span class="guide-item">首页</span>
-            <span class="guide-item">药品信息</span>
-            <span class="guide-item">信息报告</span>
-            <span class="guide-item">关于我们</span>
+            <router-link to="/" tag="span" class="guide-item">首页</router-link>
+            <router-link to="/home" tag="span" class="guide-item">药品信息</router-link>
+            <router-link to="/informationReport" tag="span" class="guide-item">信息报告</router-link>
+            <router-link to="/aboutus" tag="span" class="guide-item">关于我们</router-link>
           </div>
           <div class="guide-home">
               <span class="guide-text">药品导航</span>
