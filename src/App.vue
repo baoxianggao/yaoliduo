@@ -21,6 +21,8 @@
 html,body {
   height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 #app {
   font-family: PingFang-SC-Medium, 'Avenir', Helvetica, Arial, sans-serif;
@@ -31,11 +33,12 @@ html,body {
   min-width: 1200px;
   display: flex;
   flex-flow: column nowrap;
+  background: #F7F7F7;
   overflow: hidden;
 }
 .main-container{
   flex: 1;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   background: #F7F7F7;
   overflow: auto;
 }
