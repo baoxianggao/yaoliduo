@@ -7,6 +7,14 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '*',
+    // redirect: '/informationReport'
+    component: Home
+  },
+  {
+    path: '/',
+    name: 'home',
+    component: Home,
+    children: [{ path: '/', name: 'home', component: Home }],
     redirect: '/aboutus'
     // component: Home
   },
