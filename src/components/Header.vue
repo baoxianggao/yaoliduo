@@ -10,23 +10,15 @@
         <div class="search-btn"><img src="../assets/search.png" alt=""></div>
       </div>
       <div class="hone-navbar">
-        <!-- <div class="nav-item active">首页</div>
-        <div class="nav-item">药品信息</div>
-        <div class="nav-item">信息报告</div>
-        <div class="nav-item">关于我们</div> -->
         <router-link to="/" tag="div" class="nav-item" :class="{'active': isActive=== 'home'}">首页</router-link>
         <router-link to="/home" tag="div" class="nav-item" :class="{'active': isActive=== 'home'}">药品信息</router-link>
         <router-link to="/informationReport" tag="div" class="nav-item" :class="{'active': isActive=== 'informationReport'}">信息报告</router-link>
         <router-link to="/aboutus" tag="div" class="nav-item" :class="{'active': isActive=== 'aboutus'}">关于我们</router-link>
-
       </div>
     </div>
   </div>
 </template>
 <script>
-// import store from '@/store/index.js'
-// import router from '@/router'
-// import { mapState } from 'vuex'
 export default {
   data() {
     return {
@@ -35,8 +27,6 @@ export default {
   },
   watch:{
     $route(to,from){
-      console.log('路由变化:', to);
-      console.log('this:', this)
       this.isActive = to.name
     }
   },
