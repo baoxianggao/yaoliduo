@@ -2,7 +2,6 @@
   <div class="main">
     <img src="../../assets/banner-g.png" alt="" />
     <div class="commodityInfo">
-      <div class="commodityPrice">¥89</div>
       <div class="commodityName">易善复 多烯磷脂酰胆碱胶囊</div>
       <div class="commoditySpecification">228mg*36粒</div>
       <div class="commodityCompany">赛诺菲(北京)制药有限公司</div>
@@ -21,7 +20,7 @@ export default {
 <style lang="scss">
 .main {
   width: 260px;
-  height: 400px;
+  height: 370px;
   display: flex;
   margin-left: 10px;
   flex-direction: column;
@@ -37,17 +36,8 @@ export default {
   }
   .commodityInfo {
     width: 220px;
-    height: 170px;
+    height: 140px;
     padding: 20px 20px;
-    .commodityPrice {
-      width: 43px;
-      height: 30px;
-      font-size: 16px;
-      font-family: PingFang-SC-Heavy, PingFang-SC;
-      font-weight: 800;
-      color: rgba(255, 110, 0, 1);
-      line-height: 22px;
-    }
     .commodityName {
       margin-top: 6px;
       width: 173px;
