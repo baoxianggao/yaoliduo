@@ -1,6 +1,7 @@
 <template>
   <div class="main">
     <div class="breadcrumb">
+      <span class="title">当前位置: </span>
       <el-breadcrumb separator="/">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
         <el-breadcrumb-item :to="{ path: '/' }">活动列表</el-breadcrumb-item>
@@ -30,6 +31,19 @@ export default {
     top: -20px;
     left: 10px;
     float: left;
+
+    .title {
+      height: 14px;
+      font-size: 14px;
+      line-height: 1;
+      float: left;
+    }
+    .el-breadcrumb {
+      width: 500px;
+    }
+    .el-breadcrumb__separator {
+      margin: 0px 5px;
+    }
   }
   .commodityItem {
     width: auto;
