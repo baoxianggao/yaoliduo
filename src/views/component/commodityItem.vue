@@ -1,0 +1,88 @@
+<template>
+  <div class="main">
+    <img src="../../assets/banner-g.png" alt="" />
+    <div class="commodityInfo">
+      <div class="commodityPrice">¥89</div>
+      <div class="commodityName">易善复 多烯磷脂酰胆碱胶囊</div>
+      <div class="commoditySpecification">228mg*36粒</div>
+      <div class="commodityCompany">赛诺菲(北京)制药有限公司</div>
+      <div class="commodityFunction">辅助改善中毒性肝损伤（如药物…</div>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  name: 'commodityItem',
+  components: {
+
+  }
+}
+</script>
+<style lang="scss">
+.main {
+  width: 260px;
+  height: 400px;
+  display: flex;
+  margin-left: 10px;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  justify-content: space-between;
+  overflow: hidden;
+  img {
+    width: 198px;
+    height: 198px;
+    position: relative;
+    left: -7px;
+  }
+  .commodityInfo {
+    width: 220px;
+    height: 170px;
+    padding: 20px 20px;
+    .commodityPrice {
+      width: 43px;
+      height: 30px;
+      font-size: 16px;
+      font-family: PingFang-SC-Heavy, PingFang-SC;
+      font-weight: 800;
+      color: rgba(255, 110, 0, 1);
+      line-height: 22px;
+    }
+    .commodityName {
+      margin-top: 6px;
+      width: 173px;
+      height: 20px;
+      font-size: 14px;
+      font-family: PingFang-SC-Medium, PingFang-SC;
+      font-weight: 500;
+      color: rgba(27, 27, 27, 1);
+      line-height: 20px;
+    }
+    .commoditySpecification {
+      margin-top: 2px;
+      width: 84px;
+      height: 20px;
+      font-size: 14px;
+      font-family: PingFang-SC-Medium, PingFang-SC;
+      font-weight: 500;
+      color: rgba(27, 27, 27, 1);
+      line-height: 20px;
+    }
+    .commodityCompany {
+      margin-top: 13px;
+      width: 100%;
+      background: rgba(255, 255, 255, 1);
+    }
+    .commodityFunction {
+      margin-top: 10px;
+      width: 210px;
+      height: 25px;
+      font-size: 13px;
+      font-family: PingFang-SC-Medium, PingFang-SC;
+      font-weight: 500;
+      color: rgba(75, 143, 248, 1);
+      line-height: 18px;
+    }
+  }
+}
+</style>
