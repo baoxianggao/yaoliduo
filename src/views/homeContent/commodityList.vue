@@ -27,7 +27,8 @@ export default {
   position: relative;
   .breadcrumb {
     position: absolute;
-    top: -17px;
+    top: -20px;
+    left: 10px;
     float: left;
   }
   .commodityItem {

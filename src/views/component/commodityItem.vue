@@ -34,6 +34,7 @@ export default {
     height: 198px;
     position: relative;
     left: -7px;
+    top: 10px;
   }
   .commodityInfo {
     width: 220px;

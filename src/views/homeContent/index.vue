@@ -17,5 +17,6 @@ export default {
 <style lang="scss" scoped>
 .content_home {
   display: flex;
+  margin-top: 10px;
 }
 </style>
