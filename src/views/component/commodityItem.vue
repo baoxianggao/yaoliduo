@@ -1,5 +1,5 @@
 <template>
-  <div class="mainItem">
+  <div class="mainItem" @click="gotoDeatail">
     <img src="../../assets/banner-g.png" alt="" />
     <div class="commodityInfo">
       <div class="commodityName">易善复 多烯磷脂酰胆碱胶囊</div>
@@ -14,6 +14,11 @@ export default {
   name: 'commodityItem',
   components: {
 
+  },
+  methods: {
+    gotoDeatail: function (event) {
+      this.$router.push({ name: 'commodityInfo', query: { id: '1' } })
+    }
   }
 }
 </script>
@@ -29,6 +34,7 @@ export default {
   background: #fff;
   justify-content: space-between;
   overflow: hidden;
+  cursor: pointer;
   img {
     width: 198px;
     height: 198px;
