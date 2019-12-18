@@ -7,21 +7,37 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '*',
-    // redirect: '/informationReport'
     component: Home
   },
   {
     path: '/',
+    redirect: '/home'
+  },
+  {
+    path: '/home',
     name: 'home',
-    component: Home,
-    children: [{ path: '/', name: 'home', component: Home }],
-    redirect: '/aboutus'
-    // component: Home
+    component: () => import('../views/Home.vue'),
+    children: [
+      {
+        path: '/',
+        redirect: 'homeInfo'
+      },
+      {
+        path: 'homeInfo',
+        name: 'homeInfo',
+        component: () => import('../views/homeContent/index.vue')
+      },
+      {
+        path: 'commodityInfo',
+        name: 'commodityInfo',
+        component: () => import('../views/homeContent/commodityDetail.vue')
+      }
+    ]
   },
   // {
-  //   path: '/',
+  //   path: '/home',
   //   name: 'home',
-  //   component: Home
+  //   component: () => import('../views/homeContent/index.vue')
   // },
   {
     path: '/aboutus',

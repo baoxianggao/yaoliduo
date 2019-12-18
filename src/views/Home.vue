@@ -2,7 +2,8 @@
   <div class="home">
     <img src="../assets/banner1@2x.png" alt="" class="banner1" />
     <div class="homeContent">
-      <HomeContent></HomeContent>
+      <router-view />
+      <!-- <HomeContent></HomeContent> -->
     </div>
   </div>
 </template>

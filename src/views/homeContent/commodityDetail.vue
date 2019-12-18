@@ -8,7 +8,15 @@
           </el-carousel-item>
         </el-carousel>
       </div>
-      <div class="introduce"></div>
+      <div class="introduce">
+        <div class="title"></div>
+        <div class="name"></div>
+        <div class="approvalNumber"></div>
+        <div class="specification"></div>
+        <div class="validity"></div>
+        <div class="company"></div>
+        <div class="dosage"></div>
+      </div>
     </div>
     <div class="commidity_details"></div>
   </div>
