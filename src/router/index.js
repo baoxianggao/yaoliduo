@@ -23,6 +23,11 @@ const routes = [
         redirect: 'homeInfo'
       },
       {
+        path: 'drugsDetails',
+        name: 'drugsDetails',
+        component: () => import('../views/homeContent/drugsDetails.vue')
+      },
+      {
         path: 'homeInfo',
         name: 'homeInfo',
         component: () => import('../views/homeContent/homeShow.vue')

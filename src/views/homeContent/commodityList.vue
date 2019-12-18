@@ -4,7 +4,9 @@
       <span class="title">当前位置: </span>
       <el-breadcrumb separator="/">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item :to="{ path: '/' }">活动列表</el-breadcrumb-item>
+        <el-breadcrumb-item :to="{ path: '/home/drugsDetails' }"
+          >活动列表</el-breadcrumb-item
+        >
         <el-breadcrumb-item :to="{ path: '/' }">活动详情</el-breadcrumb-item>
       </el-breadcrumb>
       <div></div>
