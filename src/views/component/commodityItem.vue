@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="mainItem">
     <img src="../../assets/banner-g.png" alt="" />
     <div class="commodityInfo">
       <div class="commodityName">易善复 多烯磷脂酰胆碱胶囊</div>
@@ -17,8 +17,9 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-.main {
+<style lang="scss" scoped>
+.mainItem {
+  float: left;
   width: 260px;
   height: 370px;
   display: flex;

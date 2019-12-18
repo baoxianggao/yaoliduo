@@ -16,5 +16,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .content_home {
+  display: flex;
 }
 </style>
