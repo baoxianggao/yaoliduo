@@ -1,13 +1,10 @@
 <template>
   <div class="main">
-    <div class="breadcrumb">
+    <div class="breadcrumb" v-if="isHome">
       <span class="title">当前位置: </span>
       <el-breadcrumb separator="/">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item :to="{ path: '/home/drugsDetails' }"
-          >活动列表</el-breadcrumb-item
-        >
-        <el-breadcrumb-item :to="{ path: '/' }">活动详情</el-breadcrumb-item>
+        <el-breadcrumb-item>药品信息</el-breadcrumb-item>
       </el-breadcrumb>
       <div></div>
     </div>
@@ -21,6 +18,17 @@ import CommodityItem from '../component/commodityItem'
 export default {
   components: {
     CommodityItem
+  },
+  data () {
+    return {
+      isHome: false
+    }
+  },
+  created () {
+    console.log('this.$router_', this.$route)
+    if (this.$route.name !== 'homeInfo') {
+      this.isHome = true
+    }
   }
 }
 </script>

@@ -16,7 +16,7 @@ export default {
   components: {
     SiderBar,
     CommodityList
-  }
+  },
 }
 </script>
 <style lang="scss" scoped>
