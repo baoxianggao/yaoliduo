@@ -1,14 +1,18 @@
 <template>
   <div class="home">
     <img src="../assets/banner1@2x.png" alt="" class="banner1" />
-    <div class="homeContent">2131</div>
+    <div class="homeContent">
+      <HomeContent></HomeContent>
+    </div>
   </div>
 </template>
 
 <script>
+import HomeContent from './homeContent/index'
 export default {
   name: 'home',
   components: {
+    HomeContent
   }
 }
 </script>
@@ -16,16 +20,14 @@ export default {
 .home {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  align-items: center;
   .banner1 {
     width: 100%;
     height: 500px;
   }
   .homeContent {
-    display: inline-block;
     flex: 1;
-    width: 100%;
-    background: red;
+    width: 80%;
   }
 }
 </style>
