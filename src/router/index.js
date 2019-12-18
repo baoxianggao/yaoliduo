@@ -25,7 +25,7 @@ const routes = [
       {
         path: 'homeInfo',
         name: 'homeInfo',
-        component: () => import('../views/homeContent/index.vue')
+        component: () => import('../views/homeContent/homeShow.vue')
       },
       {
         path: 'commodityInfo',
@@ -34,11 +34,6 @@ const routes = [
       }
     ]
   },
-  // {
-  //   path: '/home',
-  //   name: 'home',
-  //   component: () => import('../views/homeContent/index.vue')
-  // },
   {
     path: '/aboutus',
     name: 'aboutus',

@@ -1,15 +1,10 @@
 <template>
   <div class="home">
-    <img v-if="imgInfo" src="../assets/banner1@2x.png" alt="" class="banner1" />
-    <div class="homeContent">
-      <router-view />
-      <!-- <HomeContent></HomeContent> -->
-    </div>
+    <router-view />
   </div>
 </template>
-
 <script>
-import HomeContent from './homeContent/index'
+import HomeContent from './homeContent/homeShow'
 export default {
   name: 'home',
   data () {
@@ -32,18 +27,4 @@ export default {
 }
 </script>
 <style lang="scss">
-.home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .banner1 {
-    width: 100%;
-    height: 500px;
-  }
-  .homeContent {
-    flex: 1;
-    width: 80%;
-    margin: 22px 22px;
-  }
-}
 </style>
