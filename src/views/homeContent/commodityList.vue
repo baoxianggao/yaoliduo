@@ -6,13 +6,19 @@
         <el-breadcrumb-item :to="{ path: '/' }">活动列表</el-breadcrumb-item>
         <el-breadcrumb-item :to="{ path: '/' }">活动详情</el-breadcrumb-item>
       </el-breadcrumb>
+      <div></div>
     </div>
-    <div></div>
+    <div>
+      <CommodityItem></CommodityItem>
+    </div>
   </div>
 </template>
 <script>
+import CommodityItem from '../component/commodityItem'
 export default {
-  components: {}
+  components: {
+    CommodityItem
+  }
 }
 </script>
 <style lang="scss" scoped>
