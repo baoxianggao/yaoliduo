@@ -8,7 +8,7 @@
       </el-breadcrumb>
       <div></div>
     </div>
-    <div>
+    <div class="commodityItem">
       <CommodityItem></CommodityItem>
     </div>
   </div>
@@ -24,10 +24,15 @@ export default {
 <style lang="scss" scoped>
 .main {
   // display: inline-block;
-  float: left;
+  position: relative;
   .breadcrumb {
-    position: relative;
-    top: -15px;
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    float: left;
+  }
+  .commodityItem {
+    width: auto;
   }
 }
 </style>
