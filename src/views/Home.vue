@@ -28,6 +28,7 @@ export default {
   .homeContent {
     flex: 1;
     width: 80%;
+    margin: 22px 22px;
   }
 }
 </style>
