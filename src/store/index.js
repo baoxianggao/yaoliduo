@@ -8,6 +8,7 @@ console.log('initData:', initData)
 // @classification 药品分类 eg:'专科用药'
 function getDataByClassification(classification) {
   let tempDataList = []
+  debugger
   if (!classification) {
     return tempDataList
   } else {
@@ -52,6 +53,7 @@ export default new Vuex.Store({
   },
   mutations: {
     SET_CURRENTLIST(state, payload) {
+      console.log('SET_CURRENTRECORD_', payload)
       state.currentList = payload
     },
     SET_CURRENTRECORD(state, payload) {
