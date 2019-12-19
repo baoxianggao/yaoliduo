@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import initData from '../utils/data.json'
 Vue.use(Vuex)
-console.log('initData:', initData)
 
 // 根据药品分类查询列表
 // @classification 药品分类 eg:'专科用药'
