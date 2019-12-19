@@ -8,13 +8,26 @@
       </el-breadcrumb>
       <div></div>
     </div>
-    <div
-      class="commodityItem"
-      v-for="(value, index) in commodityList"
-      :key="index"
-    >
-      <CommodityItem :commodityInfo="value"></CommodityItem>
-      <!-- {{ value }} -->
+    <div class="commodity-content">
+      <div
+        class="commodityItem"
+        v-for="(value, index) in commodityList"
+        :key="index"
+      >
+        <CommodityItem :commodityInfo="value"></CommodityItem>
+        <!-- {{ value }} -->
+      </div>
+    </div>
+    <div class="pagenation-content">
+      <el-pagination
+        background
+        layout="total, prev, pager, next"
+        :page-size="pageSize"
+        :current-page="currentPage"
+        :total="total"
+        @current-change="handleCurrentChange"
+      >
+      </el-pagination>
     </div>
   </div>
 </template>
@@ -26,28 +39,44 @@ export default {
   },
   data () {
     return {
-      isHome: false,
-      arrInfo: [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2]
+      isHome: false
     }
   },
   created () {
-    console.log('this.$router_', this.$route)
+    this.$store.dispatch('pageChange', 1)
+    this.$store.dispatch('classesModify', '全部分类')
+    this.$store.dispatch('queryByClassification', '全部分类');
     if (this.$route.name !== 'homeInfo') {
       this.isHome = true
     }
   },
   computed: {
+    currentPage: function ()  {
+      return this.$store.state.currentPage
+    },
+    total: function ()  {
+      return this.$store.state.total
+    },
+    pageSize: function ()  {
+      return this.$store.state.pageSize
+    },
     commodityList: function () {
-      return this.$store.state.currentList
+      let { pageSize, currentPage, total } = this.$store.state
+      return this.$store.state.currentList.slice((currentPage-1)*pageSize, currentPage*pageSize)
     }
-  }
+  },
+  methods: {
+    handleCurrentChange (val) {
+      this.$store.dispatch('pageChange', val);
+    }
+  },
 }
 </script>
 <style lang="scss" scoped>
 .main {
-  // display: inline-block;
   position: relative;
   width: 100%;
+  margin-bottom: 60px;
   .breadcrumb {
     position: absolute;
     top: -20px;
@@ -67,9 +96,19 @@ export default {
       margin: 0px 5px;
     }
   }
+  .commodity-content{
+    margin-bottom: 50px;
+  }
   .commodityItem {
     width: auto;
     display: inherit;
+  }
+  .pagenation-content{
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    text-align: center;
   }
 }
 </style>

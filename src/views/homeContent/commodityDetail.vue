@@ -69,7 +69,6 @@ export default {
           srcArr.push(srcItem)
         }
       }
-      console.log('srcArr_', srcArr)
       return srcArr
       // return require('../../assets/commodity/' + this.$route.params['pic1'] + '.jpg')
     }

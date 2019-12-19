@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import initData from '../utils/data.json'
+import createPersistedState from "vuex-persistedstate"
 Vue.use(Vuex)
 
 // 根据药品分类查询列表
@@ -48,14 +49,21 @@ export default new Vuex.Store({
     initData: initData, //初始数据
     currentList: initData, //当前列表所有数据
     currentRecord: {}, //当前详情展示数据
-    currentClasses: '全部用药' //默认为全部分类,当右边菜单栏点击时候保存类别
+    currentClasses: '全部用药', //默认为全部分类,当右边菜单栏点击时候保存类别
+    pageSize: 12,
+    currentPage: 1,
+    total: initData.length
   },
   mutations: {
     SET_CURRENTLIST(state, payload) {
       state.currentList = payload
+      state.total = payload.length
     },
     SET_CURRENTRECORD(state, payload) {
       state.currentRecord = payload || []
+    },
+    SET_PAGE(state, payload) {
+      state.currentPage = payload || 1
     },
     Modify_Classes(state, payload) {
       state.currentClasses = payload || ''
@@ -66,11 +74,13 @@ export default new Vuex.Store({
     queryByClassification({ commit }, classification) {
       let currentData = getDataByClassification(classification)
       commit('SET_CURRENTLIST', currentData)
+      commit('SET_PAGE', 1)
     },
     // 根据输入名称查询
     queryByName({ commit }, name) {
       let currentData = getDataByName(name)
       commit('SET_CURRENTLIST', currentData)
+      commit('SET_PAGE', 1)
     },
     // 当前详情数据
     currentRecord({ commit }, current) {
@@ -79,6 +89,13 @@ export default new Vuex.Store({
     // 点击菜单选中改变当前分类
     classesModify({ commit }, classes) {
       commit('Modify_Classes', classes)
-    }
-  }
+      commit('SET_PAGE', 1)
+    },
+    pageChange({ commit }, page) {
+      commit('SET_PAGE', page)
+    },
+  },
+  plugins: [createPersistedState({
+      storage: window.sessionStorage
+  })]
 })
