@@ -32,7 +32,9 @@ export default {
   },
   methods: {
     gotoDeatail: function (event) {
-      this.$router.push({ name: 'commodityInfo', params: this.commodityInfo })
+      this.$store.dispatch('currentRecord', this.commodityInfo).then(() => {
+        this.$router.push({ name: 'commodityInfo' })
+      })
     }
   },
   created () {

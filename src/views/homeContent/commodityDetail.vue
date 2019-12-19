@@ -54,16 +54,15 @@
 export default {
   data () {
     return {
-      commdityInfo: this.$route.params,
-      commdityInfoTest: this.$route.params.manual
+      commdityInfo: this.$store.state.currentRecord,
+      commdityInfoTest: this.$store.state.currentRecord.manual
     }
   },
   computed: {
     srcInfo: function () {
       let srcArr = []
-      const params = this.$route.params
+      const params = this.$store.state.currentRecord
       for (let item in params) {
-        debugger
         if (item.indexOf('pic') > -1) {
           // srcArr.push(params[item])
           const srcItem = require('../../assets/commodity/' + params[item] + '.jpg')
