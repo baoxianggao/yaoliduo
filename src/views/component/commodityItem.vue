@@ -35,6 +35,7 @@ export default {
   justify-content: space-between;
   overflow: hidden;
   cursor: pointer;
+  margin-bottom: 10px;
   img {
     width: 198px;
     height: 198px;

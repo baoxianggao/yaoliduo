@@ -8,8 +8,9 @@
       </el-breadcrumb>
       <div></div>
     </div>
-    <div class="commodityItem">
+    <div class="commodityItem" v-for="(value, index) in arrInfo" :key="index">
       <CommodityItem></CommodityItem>
+      <!-- {{ value }} -->
     </div>
   </div>
 </template>
@@ -21,7 +22,9 @@ export default {
   },
   data () {
     return {
-      isHome: false
+      isHome: false,
+      commodityList: this.$store.state.currentList,
+      arrInfo: [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2]
     }
   },
   created () {
@@ -36,6 +39,7 @@ export default {
 .main {
   // display: inline-block;
   position: relative;
+  width: 100%;
   .breadcrumb {
     position: absolute;
     top: -20px;
@@ -57,6 +61,7 @@ export default {
   }
   .commodityItem {
     width: auto;
+    display: inherit;
   }
 }
 </style>
