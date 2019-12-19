@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import initData from '../utils/data.json'
 Vue.use(Vuex)
-console.log('initData:', initData)
 
 // 根据药品分类查询列表
 // @classification 药品分类 eg:'专科用药'
@@ -31,6 +30,7 @@ function getDataByName(name) {
   if (!name) {
     // 不输入值展示所有数据
     tempDataList = initData
+    return tempDataList
   } else {
     initData.forEach(item => {
       if (
@@ -52,14 +52,12 @@ export default new Vuex.Store({
   },
   mutations: {
     SET_CURRENTLIST(state, payload) {
-      console.log('SET_CURRENTRECORD_', payload)
       state.currentList = payload
     },
     SET_CURRENTRECORD(state, payload) {
       state.currentRecord = payload || []
     },
     Modify_Classes(state, payload) {
-      console.log('state.currentClasses_', payload)
       state.currentClasses = payload || ''
     }
   },

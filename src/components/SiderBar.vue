@@ -59,13 +59,11 @@ export default {
         default:
           break;
       }
-      console.log('classesInfo_', classesInfo)
       return classesInfo
     }
   },
   methods: {
     handleOpen (index, indexPath) {
-      console.log('key_', index);
       let classesInfo = index + ''
       let classMessage
       switch (classesInfo) {

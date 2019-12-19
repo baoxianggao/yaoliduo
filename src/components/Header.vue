@@ -7,9 +7,9 @@
       </div>
       <div class="home-search">
         <div class="search-input">
-          <input type="text" placeholder="搜索药品，如「阿托伐他汀钙片」" />
+          <input v-model="searchText" @keyup.enter="handleSearch()" type="text" placeholder="搜索药品，如「阿托伐他汀钙片」" />
         </div>
-        <div class="search-btn"><img src="../assets/search.png" alt="" /></div>
+        <div class="search-btn" @click="handleSearch()"><img src="../assets/search.png" alt="" /></div>
       </div>
       <div class="hone-navbar">
         <router-link
@@ -48,7 +48,8 @@
 export default {
   data () {
     return {
-      isActive: 'home'
+      isActive: 'home',
+      searchText: ''
     }
   },
   watch: {
@@ -56,7 +57,15 @@ export default {
       this.isActive = to.name
     }
   },
-
+  methods: {
+    handleSearch () {
+      this.$router.push({ name: 'drugsDetails'})
+      //保存菜单
+      this.$store.dispatch('classesModify', '全部分类');
+      // 依据菜单查询数据
+      this.$store.dispatch('queryByName', this.searchText);
+    }
+  },
 }
 </script>
 <style lang="scss" scoped>

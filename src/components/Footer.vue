@@ -9,17 +9,17 @@
         <div class="footer-guide">
           <div class="guide-home">
             <span class="guide-text">网站导航</span>
-            <router-link to="/" tag="span" class="guide-item">首页</router-link>
-            <router-link to="/home" tag="span" class="guide-item">药品信息</router-link>
+            <router-link to="/home" tag="span" class="guide-item">首页</router-link>
+            <router-link to="/home/drugsDetails" tag="span" class="guide-item">药品信息</router-link>
             <router-link to="/informationReport" tag="span" class="guide-item">信息报告</router-link>
             <router-link to="/aboutus" tag="span" class="guide-item">关于我们</router-link>
           </div>
           <div class="guide-home">
             <span class="guide-text">药品导航</span>
-            <span class="guide-item">全部药品</span>
-            <span class="guide-item">专科用药</span>
-            <span class="guide-item">常备用药</span>
-            <span class="guide-item">其他用药</span>
+            <span class="guide-item" @click="handelGuide('全部分类')">全部药品</span>
+            <span class="guide-item" @click="handelGuide('专科用药')">专科用药</span>
+            <span class="guide-item" @click="handelGuide('常备药品')">常备药品</span>
+            <span class="guide-item" @click="handelGuide('其他药品')">其他药品</span>
           </div>
         </div>
         <div class="footer-company">
@@ -30,6 +30,19 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  methods: {
+    handelGuide (classMessage) {
+      this.$router.push({ name: 'drugsDetails'})
+      //保存菜单
+      this.$store.dispatch('classesModify', classMessage);
+      // 依据菜单查询数据
+      this.$store.dispatch('queryByClassification', classMessage);
+    }
+  },
+}
+</script>
 <style lang="scss" scoped>
 .footer {
   position: relative;
