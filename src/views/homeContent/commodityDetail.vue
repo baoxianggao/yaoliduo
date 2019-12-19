@@ -15,8 +15,17 @@
       <div class="commidity_introduce">
         <div class="carousel">
           <el-carousel height="400px">
-            <el-carousel-item v-for="item in 4" :key="item">
-              <img src="../../assets/commodity/1.jpg" alt="" />
+            <el-carousel-item>
+              <img :src="srcOne" alt="" />
+            </el-carousel-item>
+            <el-carousel-item>
+              <img :src="srcTwo" alt="" />
+            </el-carousel-item>
+            <el-carousel-item>
+              <img :src="srcThree" alt="" />
+            </el-carousel-item>
+            <el-carousel-item>
+              <img :src="srcFour" alt="" />
             </el-carousel-item>
           </el-carousel>
         </div>
@@ -54,13 +63,27 @@
 export default {
   data () {
     return {
-      commdityInfo: this.$route.query,
-      commdityInfoTest: this.$route.query.manual
+      commdityInfo: this.$route.params,
+      commdityInfoTest: this.$route.params.manual
     }
   },
+  computed: {
+    srcOne: function () {
+      debugger
+      return require('../../assets/commodity/' + this.$route.params['pic1'] + '.jpg')
+    },
+    srcTwo: function () {
+      return require('../../assets/commodity/' + this.$route.params['pic2'] + '.jpg')
+    },
+    srcThree: function () {
+      return require('../../assets/commodity/' + this.$route.params['pic3'] + '.jpg')
+    },
+    srcFour: function () {
+      return require('../../assets/commodity/' + this.$route.params['pic4'] + '.jpg')
+    },
+  },
   created () {
-    const a = this.$route.query.manual.replace(/\n/g, '<br>')
-    console.log('a_',a)
+    const a = this.$route.params.manual.replace(/\n/g, '<br>')
   }
 }
 </script>
