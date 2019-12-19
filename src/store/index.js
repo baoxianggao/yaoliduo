@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import initData from '../utils/data.json'
+import createPersistedState from "vuex-persistedstate"
 Vue.use(Vuex)
 
 // 根据药品分类查询列表
@@ -93,5 +94,8 @@ export default new Vuex.Store({
     pageChange({ commit }, page) {
       commit('SET_PAGE', page)
     },
-  }
+  },
+  plugins: [createPersistedState({
+      storage: window.sessionStorage
+  })]
 })

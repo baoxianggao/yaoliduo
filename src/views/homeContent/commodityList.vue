@@ -43,6 +43,9 @@ export default {
     }
   },
   created () {
+    this.$store.dispatch('pageChange', 1)
+    this.$store.dispatch('classesModify', '全部分类')
+    this.$store.dispatch('queryByClassification', '全部分类');
     if (this.$route.name !== 'homeInfo') {
       this.isHome = true
     }
