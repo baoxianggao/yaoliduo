@@ -47,7 +47,7 @@ function getDataByName(name) {
 export default new Vuex.Store({
   state: {
     initData: initData, //初始数据
-    currentList: [], //当前列表所有数据
+    currentList: initData, //当前列表所有数据
     currentRecord: {}, //当前详情展示数据
     currentClasses: '全部用药' //默认为全部分类,当右边菜单栏点击时候保存类别
   },

@@ -8,7 +8,11 @@
       </el-breadcrumb>
       <div></div>
     </div>
-    <div class="commodityItem" v-for="(value, index) in arrInfo" :key="index">
+    <div
+      class="commodityItem"
+      v-for="(value, index) in commodityList"
+      :key="index"
+    >
       <CommodityItem></CommodityItem>
       <!-- {{ value }} -->
     </div>
@@ -23,7 +27,6 @@ export default {
   data () {
     return {
       isHome: false,
-      commodityList: this.$store.state.currentList,
       arrInfo: [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2]
     }
   },
@@ -31,6 +34,11 @@ export default {
     console.log('this.$router_', this.$route)
     if (this.$route.name !== 'homeInfo') {
       this.isHome = true
+    }
+  },
+  computed: {
+    commodityList: function () {
+      return this.$store.state.currentList
     }
   }
 }
