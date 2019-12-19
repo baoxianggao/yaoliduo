@@ -63,14 +63,12 @@ export default {
       let srcArr = []
       const params = this.$route.params
       for (let item in params) {
-        debugger
         if (item.indexOf('pic') > -1) {
           // srcArr.push(params[item])
           const srcItem = require('../../assets/commodity/' + params[item] + '.jpg')
           srcArr.push(srcItem)
         }
       }
-      console.log('srcArr_', srcArr)
       return srcArr
       // return require('../../assets/commodity/' + this.$route.params['pic1'] + '.jpg')
     }
