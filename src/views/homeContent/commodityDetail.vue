@@ -21,26 +21,36 @@
           </el-carousel>
         </div>
         <div class="introduce">
-          <div class="title">易善复 多烯磷脂酰胆碱胶囊228mg*3</div>
-          <div class="content">商品名称：易善复</div>
-          <div class="content">通用名称：多烯磷脂酰胆碱胶囊</div>
-          <div class="content">批准文号：国药准字H20059010</div>
-          <div class="content">规格：228mg*36粒</div>
-          <div class="content">有效期：18个月</div>
-          <div class="content">生产企业：赛诺菲(北京)制药有限公司</div>
-          <div class="content">剂型：胶囊剂</div>
-          <div class="footer">适应症/功能主治：辅助改善中毒性肝损伤（</div>
-          <div class="footer">不良反应：在大剂量服用时偶尔会出现胃肠道</div>
-          <div class="footer">用法用量：除非医生处方特别指出，应按以下</div>
+          <div class="title">{{ commdityInfo["title"] }}</div>
+          <div class="content">商品名称：{{ commdityInfo["productName"] }}</div>
+          <div class="content">通用名称：{{ commdityInfo["commonName"] }}</div>
+          <div class="content">
+            批准文号：{{ commdityInfo["approvalNumber"] }}
+          </div>
+          <div class="content">规格：{{ commdityInfo["model"] }}</div>
+          <div class="content">
+            有效期：{{ commdityInfo["expirationDate"] }}
+          </div>
+          <div class="content">
+            生产企业：{{ commdityInfo["manufacturer"] }}
+          </div>
+          <div class="content">剂型：{{ commdityInfo["dosageForm"] }}</div>
+          <div class="footer">
+            适应症/功能主治：{{ commdityInfo["functionalIndication"] }}
+          </div>
+          <div class="footer">
+            不良反应：{{ commdityInfo["adverseReactions"] }}
+          </div>
+          <div class="footer">用法用量：{{ commdityInfo["dosage"] }}</div>
         </div>
       </div>
       <div class="commidity_details">
         <div>
           【药品名称】
         </div>
-        <div>通用名称：多烯磷脂酰胆碱胶囊</div>
-        <div>商品名称：易善复</div>
-        <div>英文名称：Polyene Phosphatidylcholine Capsules;</div>
+        <div>通用名称：{{ commdityInfo["commonName"] }}</div>
+        <div>商品名称：{{ commdityInfo["productName"] }}</div>
+        <div>英文名称：{{ commdityInfo["productName"] }}</div>
         <div>
           【成份本品】每粒胶囊含多烯磷脂酰胆碱
           （天然多烯磷脂酰胆碱，带有大量的不饱和脂肪酸基，主要为亚油酸[约占70%]、亚麻酸和油酸）228
@@ -110,7 +120,14 @@
 </template>
 <script>
 export default {
-
+  data () {
+    return {
+      commdityInfo: this.$route.query
+    }
+  },
+  created () {
+    console.log('this.$route.query_', this.$route.query)
+  }
 }
 </script>
 <style lang="scss" scoped>
