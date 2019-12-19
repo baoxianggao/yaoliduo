@@ -8,7 +8,6 @@ console.log('initData:', initData)
 // @classification 药品分类 eg:'专科用药'
 function getDataByClassification(classification) {
   let tempDataList = []
-  debugger
   if (!classification) {
     return tempDataList
   } else {

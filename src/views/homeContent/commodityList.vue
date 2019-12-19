@@ -13,7 +13,7 @@
       v-for="(value, index) in commodityList"
       :key="index"
     >
-      <CommodityItem></CommodityItem>
+      <CommodityItem :commodityInfo="value"></CommodityItem>
       <!-- {{ value }} -->
     </div>
   </div>
