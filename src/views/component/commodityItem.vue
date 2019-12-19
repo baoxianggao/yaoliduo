@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     gotoDeatail: function (event) {
-      this.$router.push({ name: 'commodityInfo', query: this.commodityInfo })
+      this.$router.push({ name: 'commodityInfo', params: this.commodityInfo })
     }
   },
   created () {

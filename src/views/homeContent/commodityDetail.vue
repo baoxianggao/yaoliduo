@@ -15,8 +15,8 @@
       <div class="commidity_introduce">
         <div class="carousel">
           <el-carousel height="400px">
-            <el-carousel-item v-for="item in 4" :key="item">
-              <img src="../../assets/commodity/1.jpg" alt="" />
+            <el-carousel-item v-for="(value, index) in srcInfo" :key="index">
+              <img :src="value" alt="" />
             </el-carousel-item>
           </el-carousel>
         </div>
@@ -54,13 +54,29 @@
 export default {
   data () {
     return {
-      commdityInfo: this.$route.query,
-      commdityInfoTest: this.$route.query.manual
+      commdityInfo: this.$route.params,
+      commdityInfoTest: this.$route.params.manual
+    }
+  },
+  computed: {
+    srcInfo: function () {
+      let srcArr = []
+      const params = this.$route.params
+      for (let item in params) {
+        debugger
+        if (item.indexOf('pic') > -1) {
+          // srcArr.push(params[item])
+          const srcItem = require('../../assets/commodity/' + params[item] + '.jpg')
+          srcArr.push(srcItem)
+        }
+      }
+      console.log('srcArr_', srcArr)
+      return srcArr
+      // return require('../../assets/commodity/' + this.$route.params['pic1'] + '.jpg')
     }
   },
   created () {
-    const a = this.$route.query.manual.replace(/\n/g, '<br>')
-    console.log('a_',a)
+    const a = this.$route.params.manual.replace(/\n/g, '<br>')
   }
 }
 </script>
