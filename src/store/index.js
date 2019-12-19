@@ -47,7 +47,8 @@ export default new Vuex.Store({
   state: {
     initData: initData, //初始数据
     currentList: [], //当前列表所有数据
-    currentRecord: {} //当前详情展示数据
+    currentRecord: {}, //当前详情展示数据
+    currentClasses: '全部用药' //默认为全部分类,当右边菜单栏点击时候保存类别
   },
   mutations: {
     SET_CURRENTLIST(state, payload) {
@@ -55,22 +56,30 @@ export default new Vuex.Store({
     },
     SET_CURRENTRECORD(state, payload) {
       state.currentRecord = payload || []
+    },
+    Modify_Classes(state, payload) {
+      console.log('state.currentClasses_', payload)
+      state.currentClasses = payload || ''
     }
   },
   actions: {
     // 根据药品类型查询
     queryByClassification({ commit }, classification) {
       let currentData = getDataByClassification(classification)
-      commit(SET_CURRENTLIST, currentData)
+      commit('SET_CURRENTLIST', currentData)
     },
     // 根据输入名称查询
     queryByName({ commit }, name) {
       let currentData = getDataByName(name)
-      commit(SET_CURRENTLIST, currentData)
+      commit('SET_CURRENTLIST', currentData)
     },
     // 当前详情数据
     currentRecord({ commit }, current) {
-      commit(SET_CURRENTRECORD, current)
+      commit('SET_CURRENTRECORD', current)
+    },
+    // 点击菜单选中改变当前分类
+    classesModify({ commit }, classes) {
+      commit('Modify_Classes', classes)
     }
   }
 })
