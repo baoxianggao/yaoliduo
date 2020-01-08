@@ -3,13 +3,20 @@
     <div class="header-content">
       <div class="home-logo">
         <img class="logo-img" src="../assets/logo@2x.png" alt="" />
-        <span class="logo-text">燧人医疗</span>
+        <span class="logo-text">即医</span>
       </div>
       <div class="home-search">
         <div class="search-input">
-          <input v-model="searchText" @keyup.enter="handleSearch()" type="text" placeholder="搜索药品，如「阿托伐他汀钙片」" />
+          <input
+            v-model="searchText"
+            @keyup.enter="handleSearch()"
+            type="text"
+            placeholder="搜索药品，如「阿托伐他汀钙片」"
+          />
         </div>
-        <div class="search-btn" @click="handleSearch()"><img src="../assets/search.png" alt="" /></div>
+        <div class="search-btn" @click="handleSearch()">
+          <img src="../assets/search.png" alt="" />
+        </div>
       </div>
       <div class="hone-navbar">
         <router-link
@@ -59,7 +66,7 @@ export default {
   },
   methods: {
     handleSearch () {
-      this.$router.push({ name: 'drugsDetails'})
+      this.$router.push({ name: 'drugsDetails' })
       //保存菜单
       this.$store.dispatch('classesModify', '全部分类');
       // 依据菜单查询数据
